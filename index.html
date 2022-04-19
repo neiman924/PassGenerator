@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./Assets/style.css" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div >
+          <form>
+            <label for="passLenghth">Password lenghth (between 5 to 128)</label>
+            <input type="number" id="passLenght" name="passLenght" value="5" min="5" max="128" required style="width: 50px;">
+            <br><br>
+            <div style="display: inline;margin-right: 19%;"> 
+              <input type="checkbox" id="passlowercase" name="passlowercase" value="false" onchange="if(this.checked) this.value='true'; else this.value='false';">
+              <label for="passlowercase">Lowercase</label>
+              <input type="checkbox" id="passupercase" name="passupercase" value="false" onchange="if(this.checked) this.value='true'; else this.value='false';">
+              <label for="passupercase">Uppercase</label><br>
+              <input type="checkbox" id="passNumber" name="passNumber" value="false" onchange="if(this.checked) this.value='true'; else this.value='false';">
+              <label for="passNumber">Numbers</label>
+              <input type="checkbox" id="passspecial" name="passspecial" value="false" onchange="if(this.checked) this.value='true'; else this.value='false';">
+              <label for="passspecial">Special characters</label>
+            </div>
+            <input type="submit" id="generate" class="btn" onclick="writePassword()" value="Generate Password">
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+
+  </body>
+</html>
+
+</script>

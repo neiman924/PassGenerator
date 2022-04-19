@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #4d4d4d;
 }
 
 .wrapper {
@@ -27,15 +27,15 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(0, 0%, 100%);
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 59%);
   border-radius: 5px;
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  box-shadow: rgba(0, 0, 2, 0.15) 0px 2px 8px 15px;
+  color: hsl(206, 33%, 24%);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -92,6 +92,10 @@ button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
+button:hover{
+  transition: 1.2s;
+  transform: scale(1.02);
+}
 
 .float-right {
   float: right;
@@ -117,7 +121,6 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
-
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
@@ -134,4 +137,7 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
+}
+form {
+  
 }
