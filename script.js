@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#password");
 var passLenght = 0;
 var passatLeast;
 var passlowercase;
@@ -11,45 +12,44 @@ var charcap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var charlower = 'abcdefghijklmnopqrstuvwxyz';
 var numbers = '0123456789';
 var charsym = '~!@#$%^&*()_+-=:;}{,><./?';
-
+var password;
+var passwordText;
 //--------------------------------------------------
 
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword(passLenght);
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-}
+// function writePassword() {
+//   password = generatePassword();
+//   passwordText = document.querySelector("#password");
+//   passwordText.value = password;
+//   alert(generatePassword());
+// }
 //--------------------------------------------------
 
 // Add event listener to generate button
-
-generateBtn.addEventListener("click", writePassword);
-
+generateBtn.addEventListener("click", collectInfo);
 //--------------------------------------------------
 function collectInfo(){
-  passLenght = (document.getElementById("passLenght").value);
+  passLenght = parseInt(document.getElementById("passLenght").value);
   passlowercase = (document.getElementById("passlowercase").value);
   passupercase = (document.getElementById("passupercase").value);
   passNumber = (document.getElementById("passNumber").value);
   passspecial = (document.getElementById("passspecial").value);
-  writePassword();
+  password = generatePassword();
+  document.getElementById('password').value = password;
 }
  //-------------------------------------------
 
 
-// alert(generatePassword(6));
 /////////////////////////////////////////////////
-function generatePassword(length) {
+function generatePassword() {
   var result           = '';
   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+-=:;}{,><./?';
   var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
+  for ( var i = 0; i < passLenght; i++ ) {
     result += characters.charAt(Math.floor(Math.random() * 
 charactersLength));
  }
  return result;
 }
 
-console.log(generatePassword(5));
